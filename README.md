@@ -103,3 +103,15 @@ Important features for this experiments are -
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 - As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
+
+![image](https://github.com/user-attachments/assets/38c2718d-a4c1-4967-adb5-2ab634147d0a)
+
+![image](https://github.com/user-attachments/assets/c4059aa1-7cef-46b8-9312-8cf0871d37e7)
+
+![image](https://github.com/user-attachments/assets/fd642643-2e67-4549-923d-8502039aca93)
+
+
+![image](https://github.com/user-attachments/assets/96a9aa74-f853-4e63-a776-705653c62f44)
+
+
+
