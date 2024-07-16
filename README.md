@@ -103,7 +103,7 @@ Important features for this experiments are -
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 - As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
-
+#### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v1_2.ipynb)
 ![image](https://github.com/user-attachments/assets/38c2718d-a4c1-4967-adb5-2ab634147d0a)
 
 ![image](https://github.com/user-attachments/assets/c4059aa1-7cef-46b8-9312-8cf0871d37e7)
@@ -112,6 +112,36 @@ Important features for this experiments are -
 
 
 ![image](https://github.com/user-attachments/assets/96a9aa74-f853-4e63-a776-705653c62f44)
+
+#### Experiment 5: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v3_1.ipynb)
+
+![image](https://github.com/user-attachments/assets/d840b85c-2d98-4a3b-ada1-e54149ae231f)
+
+![image](https://github.com/user-attachments/assets/8c65d8a7-7623-483d-9c81-fce34aadb10b)
+
+![image](https://github.com/user-attachments/assets/fc039ea1-afd6-4104-9657-0fcbf7b5e621)
+
+![image](https://github.com/user-attachments/assets/e075da50-3621-4c00-8922-a92f7670fec9)
+
+
+### CIFAR10 experiments
+
+#### Experiment 1: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v1.ipynb)
+
+![image](https://github.com/user-attachments/assets/46e7d7b2-825a-44ab-97a0-84b50345f7e3)
+
+![image](https://github.com/user-attachments/assets/85fb6cdd-b66b-4cb2-9388-8dbf43d3fcdf)
+
+![image](https://github.com/user-attachments/assets/a4540d9a-c891-4161-9e65-936e27abfd3f)
+
+![image](https://github.com/user-attachments/assets/708d1f81-74db-405f-9322-2fc72c1c831e)
+
+
+
+
+
+
+
 
 
 
