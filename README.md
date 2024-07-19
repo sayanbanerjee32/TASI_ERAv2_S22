@@ -193,7 +193,7 @@ Important features for this experiments are -
 ##### Observation
 
 - Convergence of losses seems very difficult
-- reconstruction of output image is very poor
+- Reconstruction of output image is very poor
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 - Therefore, the plan was to use half precision of speedy training, LR finder to accelerate loss convergence and more epochs to see if mixed up imaged can be generated.
 
@@ -201,7 +201,7 @@ Important features for this experiments are -
 Important features for this experiments are - 
 1. labels are converted to **one-hot encoding**
 2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that ecoding dimension becomes - batch_size x num_labels x img_size x img_size
-3. that gets concatenated with image channel dimension and becomes - batch_size x (num_labels + channel_dim) x img_size x img_size. For MNIST channel_dim is 1
+3. that gets concatenated with image channel dimension and becomes - batch_size x (num_labels + channel_dim) x img_size x img_size. For CIFAR10 channel_dim is 3
 4. Then 1x1 convolution is used to bring the channel dimension back to 3 as the ResNet encoder block accepts 3 channels.
 5. For decoder input, the output of **label encoding** is concatenated directly to latent dimension.
 6. At the time of training, **label encoding** is used in encoder input and decoder input.
@@ -216,14 +216,14 @@ Important features for this experiments are -
 
 ##### Output
 
-![image](https://github.com/user-attachments/assets/29a0e9a2-3bfc-4cb8-b71c-2a47b4e9f1ea)
+![image](https://github.com/user-attachments/assets/839d56d0-5da2-458d-a71c-2b81806a817f)
+
 
 ##### Observation
 
 - Convergence of losses seems very difficult
-- The output image is always decided by the input label instad of input image
+- Reconstruction of output image is very poor
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
-- As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
 #### Experiment 3: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v3.ipynb)
 Important features for this experiments are - 
