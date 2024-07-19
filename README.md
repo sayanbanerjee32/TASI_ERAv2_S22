@@ -104,14 +104,36 @@ Important features for this experiments are -
 - As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
 #### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v1_2.ipynb)
+
+Important features for this experiments are - 
+1. This only an extension to Experiment1
+2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
+![image](https://github.com/user-attachments/assets/96a9aa74-f853-4e63-a776-705653c62f44)
+
+##### Training parameters
+
+1. batch size: 512
+2. learning rate: 1e-4 (Tried using LR range test, however could not train with suggested LR, it was causing gradient explosion)
+3. lr scheduler: One-Cycle LR
+4. precision: 16
+5. epochs: 100
+
+##### Output
+![image](https://github.com/user-attachments/assets/b15f9c1a-3ff1-4a47-b1af-d98e7378d094)
+
+##### Loss curves
+
 ![image](https://github.com/user-attachments/assets/38c2718d-a4c1-4967-adb5-2ab634147d0a)
 
 ![image](https://github.com/user-attachments/assets/c4059aa1-7cef-46b8-9312-8cf0871d37e7)
 
 ![image](https://github.com/user-attachments/assets/fd642643-2e67-4549-923d-8502039aca93)
 
+##### Observation
 
-![image](https://github.com/user-attachments/assets/96a9aa74-f853-4e63-a776-705653c62f44)
+- All loss plateued
+- The output image is decided by the input label instad of input image
+- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 #### Experiment 5: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v3_1.ipynb)
 
