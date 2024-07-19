@@ -225,47 +225,36 @@ Important features for this experiments are -
 - Reconstruction of output image is very poor
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
-#### Experiment 3: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v3.ipynb)
+#### Experiment 3: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v1_2.ipynb)
+
 Important features for this experiments are - 
-1. labels are converted to **one-hot encoding**
-2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that ecoding dimension becomes - batch_size x num_labels x img_size x img_size
-3. that gets concatenated with image channel dimension and becomes - batch_size x (num_labels + channel_dim) x img_size x img_size. For MNIST channel_dim is 1
-4. Then 1x1 convolution is used to bring the channel dimension back to 3 as the ResNet encoder block accepts 3 channels.
-5. For decoder input, labels are converted to **embeddings** using embedding layer and the the output of **label embedding** is concatenated directly to latent dimension.
-6. At the time of training, **label encoding** is used in encoder input but **label embedding** is used for decoder input.
+1. This only an extension to Experiment1
+2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
+![image](https://github.com/user-attachments/assets/a4540d9a-c891-4161-9e65-936e27abfd3f)
 
 ##### Training parameters
 
 1. batch size: 512
-2. learning rate: 1e-4
-3. lr scheduler: None
-4. precision: 32
-5. epochs: 50
+2. Max learning rate: 0.000036 (Used LR Range test and used 10 timed less than suggested LR)
+3. lr scheduler: One-Cycle LR
+4. precision: 16
+5. epochs: 100
 
 ##### Output
+![image](https://github.com/user-attachments/assets/10814b24-be9e-45b4-8ce9-166730816bac)
 
-![image](https://github.com/user-attachments/assets/445ecf47-a76b-4ff2-989b-82a04a837ad8)
-
-
-##### Observation
-
-- Convergence of losses seems very difficult
-- The output image is **mostly** decided by the input label instad of input image
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
-- As the quality of these images are not as good as experiment 1, no further updates are done on this.
-
-
-#### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v1_2.ipynb)
-
+##### Loss curves
 ![image](https://github.com/user-attachments/assets/46e7d7b2-825a-44ab-97a0-84b50345f7e3)
 
 ![image](https://github.com/user-attachments/assets/85fb6cdd-b66b-4cb2-9388-8dbf43d3fcdf)
 
-![image](https://github.com/user-attachments/assets/a4540d9a-c891-4161-9e65-936e27abfd3f)
-
 ![image](https://github.com/user-attachments/assets/708d1f81-74db-405f-9322-2fc72c1c831e)
 
+##### Observation
 
+- While the loss curves show indication of convergence, convergence of losses seems very difficult
+- Reconstruction of output image is very poor
+- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 
 
