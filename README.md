@@ -1,4 +1,4 @@
-# TASI_ERAv2_S22
+![image](https://github.com/user-attachments/assets/26efe0b5-0c35-457a-b598-3809ec0aaa63)# TASI_ERAv2_S22
 
 ## Objective
 
@@ -113,7 +113,7 @@ Important features for this experiments are -
 ##### Training parameters
 
 1. batch size: 512
-2. learning rate: 1e-4 (Tried using LR range test, however could not train with suggested LR, it was causing gradient explosion)
+2. Max learning rate: 0.001 (Tried using LR range test, however could not train with suggested LR, it was causing gradient explosion)
 3. lr scheduler: One-Cycle LR
 4. precision: 16
 5. epochs: 100
@@ -136,14 +136,34 @@ Important features for this experiments are -
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 #### Experiment 5: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v3_1.ipynb)
+Important features for this experiments are - 
+1. This only an extension to Experiment3
+2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
+![image](https://github.com/user-attachments/assets/fc039ea1-afd6-4104-9657-0fcbf7b5e621)
 
+##### Training parameters
+
+1. batch size: 512
+2. Max learning rate: 0.02 (Used LR Range test and used 10 timed less than suggested LR)
+3. lr scheduler: One-Cycle LR
+4. precision: 16
+5. epochs: 100
+
+##### Output
+![image](https://github.com/user-attachments/assets/84c4702f-5551-4b11-a3f4-035fe5850beb)
+
+
+##### Loss curves
 ![image](https://github.com/user-attachments/assets/d840b85c-2d98-4a3b-ada1-e54149ae231f)
 
 ![image](https://github.com/user-attachments/assets/8c65d8a7-7623-483d-9c81-fce34aadb10b)
 
-![image](https://github.com/user-attachments/assets/fc039ea1-afd6-4104-9657-0fcbf7b5e621)
-
 ![image](https://github.com/user-attachments/assets/e075da50-3621-4c00-8922-a92f7670fec9)
+
+##### Observation
+
+- Losses are very jittery and no image got reconstructed
+- Need further analysis to understand the issue
 
 
 ### CIFAR10 experiments
