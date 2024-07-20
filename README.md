@@ -165,6 +165,39 @@ Important features for this experiments are -
 - Losses are very jittery and no image got reconstructed
 - Need further analysis to understand the issue
 
+#### Experiment 6: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v4.ipynb)
+Important features for this experiments are - 
+1. This only an extension to Experiment3
+2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
+![image](https://github.com/user-attachments/assets/9088447d-7811-4fe3-8b6d-9c89497d018b)
+
+##### Training parameters
+
+1. batch size: 512
+2. Max learning rate: 0.02 (Used LR Range test and used 10 timed less than suggested LR)
+3. lr scheduler: One-Cycle LR
+4. precision: 16
+5. epochs: 50
+
+##### Output
+
+![image](https://github.com/user-attachments/assets/4b8ebcd6-d3f9-4958-896e-468becad0a1d)
+
+
+##### Loss curves
+![image](https://github.com/user-attachments/assets/3702df56-3bab-48c7-b23b-68b70098cf8c)
+
+![image](https://github.com/user-attachments/assets/6b005007-3a55-44d7-9db3-207e67644d04)
+
+![image](https://github.com/user-attachments/assets/4c4e1365-0fd3-4978-8579-532610970ed5)
+
+![image](https://github.com/user-attachments/assets/16453f8f-5c5a-47ee-ae5a-6b48d843bd5e)
+
+
+##### Observation
+
+- Losses are very jittery and no image got reconstructed
+- Need further analysis to understand the issue
 
 ### CIFAR10 experiments
 
