@@ -165,16 +165,16 @@ Important features for this experiments are -
 - Losses are very jittery and no image got reconstructed
 - Need further analysis to understand the issue
 
-#### Experiment 6: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v4.ipynb)
+#### (Final) Experiment 6: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v4.ipynb)
 Important features for this experiments are - 
-1. This only an extension to Experiment3
+1. This an extension to Experiment4. Here, along with using the label embedding in encoder and decoder input, used a small linear classifer on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
 2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
 ![image](https://github.com/user-attachments/assets/9088447d-7811-4fe3-8b6d-9c89497d018b)
 
 ##### Training parameters
 
 1. batch size: 512
-2. Max learning rate: 0.02 (Used LR Range test and used 10 timed less than suggested LR)
+2. Max learning rate: 0.001 (Tried using LR range test, however could not train with suggested LR, it was causing gradient explosion)
 3. lr scheduler: One-Cycle LR
 4. precision: 16
 5. epochs: 50
@@ -196,8 +196,7 @@ Important features for this experiments are -
 
 ##### Observation
 
-- Losses are very jittery and no image got reconstructed
-- Need further analysis to understand the issue
+- The output is observed to be close to the expectation when provided an image and wrong label.
 
 ### CIFAR10 experiments
 
@@ -292,7 +291,7 @@ Important features for this experiments are -
 #### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v4.ipynb)
 
 Important features for this experiments are - 
-1. This only an extension to Experiment1
+1. This an extension to Experiment3. Here, along with using the label embedding in encoder and decoder input, used a small linear classifer on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
 2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
 ![image](https://github.com/user-attachments/assets/ccd4f9a3-ca8a-4f4f-800e-f0ac71661fd2)
 
@@ -300,7 +299,7 @@ Important features for this experiments are -
 ##### Training parameters
 
 1. batch size: 512
-2. Max learning rate: 0.000036 (Used LR Range test and used 10 timed less than suggested LR)
+2. Max learning rate: 0.001 (Tried using LR range test, however could not train with suggested LR, it was causing gradient explosion)
 3. lr scheduler: One-Cycle LR
 4. precision: 16
 5. epochs: 100
@@ -323,9 +322,8 @@ Important features for this experiments are -
 
 ##### Observation
 
-- While the loss curves show indication of convergence, convergence of losses seems very difficult
-- Reconstruction of output image is very poor
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- The output is observed to be close to the expectation when provided an image and wrong label.
+- The image reconstruction is better than all other experiments, but completely clear
 
 
 
