@@ -289,6 +289,45 @@ Important features for this experiments are -
 - Reconstruction of output image is very poor
 - While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
+#### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v4.ipynb)
+
+Important features for this experiments are - 
+1. This only an extension to Experiment1
+2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
+![image](https://github.com/user-attachments/assets/ccd4f9a3-ca8a-4f4f-800e-f0ac71661fd2)
+
+
+##### Training parameters
+
+1. batch size: 512
+2. Max learning rate: 0.000036 (Used LR Range test and used 10 timed less than suggested LR)
+3. lr scheduler: One-Cycle LR
+4. precision: 16
+5. epochs: 100
+
+##### Output
+![image](https://github.com/user-attachments/assets/dad598ec-069a-409a-af0e-d1244ac44dcf)
+
+##### Loss curves
+
+![image](https://github.com/user-attachments/assets/f40b7024-c687-4073-97ea-b82b9d8ae96a)
+
+![image](https://github.com/user-attachments/assets/63ef78a5-7cee-4e8d-bc26-f4834f8c5386)
+
+![image](https://github.com/user-attachments/assets/a4958f32-3c5f-4afb-a70e-490993129c89)
+
+![image](https://github.com/user-attachments/assets/ebaddf53-10e0-4d64-b030-705cd70db26d)
+
+![image](https://github.com/user-attachments/assets/0781b952-9a9f-4a79-a413-2a0eb0acc9fb)
+
+
+##### Observation
+
+- While the loss curves show indication of convergence, convergence of losses seems very difficult
+- Reconstruction of output image is very poor
+- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+
+
 
 
 
