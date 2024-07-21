@@ -9,10 +9,10 @@
 3. Now randomly send an MNIST image, but with a wrong label. Do this 25 times, and share what the VAE makes (25 images stacked in 1 image)!
 4. Now replicate the same for CIFAR10 and share 25 images (1 stacked image)!
 
-## Refernce Notebook
-All experiments are performed by updated the this [collab notebook](https://colab.research.google.com/drive/1_yGmk8ahWhDs23U4mpplBFa-39fsEJoT?usp=sharing) that demostrates VAE training on CIFAR10 images using Pytorch Lightning 
+## Reference Notebook
+All experiments are performed by updated the this [collab notebook](https://colab.research.google.com/drive/1_yGmk8ahWhDs23U4mpplBFa-39fsEJoT?usp=sharing) that demonstrates VAE training on CIFAR10 images using Pytorch Lightning 
 
-## Experiemnts
+## Experiments
 
 The problem statement is perceived as a problem of Conditional VAE. The initial experimental thouthts are borrwed from this [article](https://towardsdatascience.com/conditional-variational-autoencoders-with-learnable-conditional-embeddings-e22ee5359a2a)
 
@@ -42,9 +42,9 @@ Important features for this experiments are -
 ##### Observation
 
 - Convergence of losses seems very difficult
-- The output image is always decided by the input label instad of input image
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
-- Therefore, the plan was to use half precision of speedy training, LR finder to accelerate loss convergence and more epochs to see if mixed up imaged can be generated.
+- The output image is always decided by the input label instead of input image
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- Therefore, the plan was to use half precision of speedy training, LR finder to accelerate loss convergence and more epochs to see if mixed up images can be generated.
 
 #### Experiment 2: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v2.ipynb)
 Important features for this experiments are - 
@@ -70,14 +70,14 @@ Important features for this experiments are -
 ##### Observation
 
 - Convergence of losses seems very difficult
-- The output image is always decided by the input label instad of input image
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- The output image is always decided by the input label instead of input image
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 - As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
 #### Experiment 3: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v3.ipynb)
 Important features for this experiments are - 
 1. labels are converted to **one-hot encoding**
-2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that ecoding dimension becomes - batch_size x num_labels x img_size x img_size
+2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that encoding dimension becomes - batch_size x num_labels x img_size x img_size
 3. that gets concatenated with image channel dimension and becomes - batch_size x (num_labels + channel_dim) x img_size x img_size. For MNIST channel_dim is 1
 4. Then 1x1 convolution is used to bring the channel dimension back to 3 as the ResNet encoder block accepts 3 channels.
 5. For decoder input, labels are converted to **embeddings** using embedding layer and the the output of **label embedding** is concatenated directly to latent dimension.
@@ -99,8 +99,8 @@ Important features for this experiments are -
 ##### Observation
 
 - Convergence of losses seems very difficult
-- The output image is **mostly** decided by the input label instad of input image
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- The output image is **mostly** decided by the input label instead of input image
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 - As the quality of these images are not as good as experiment 1, no further updates are done on this.
 
 #### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v1_2.ipynb)
@@ -131,9 +131,9 @@ Important features for this experiments are -
 
 ##### Observation
 
-- All loss plateued
-- The output image is decided by the input label instad of input image
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- All loss plateaued
+- The output image is decided by the input label instead of input image
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 #### Experiment 5: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v3_1.ipynb)
 Important features for this experiments are - 
@@ -167,7 +167,7 @@ Important features for this experiments are -
 
 #### (Final) Experiment 6: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_MNSIT_image_and_label_v4.ipynb)
 Important features for this experiments are - 
-1. This an extension to Experiment4. Here, along with using the label embedding in encoder and decoder input, used a small linear classifer on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
+1. This is an extension to Experiment4. Here, along with using the label embedding in encoder and decoder input, used a small linear classifier on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
 2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
 ![image](https://github.com/user-attachments/assets/9088447d-7811-4fe3-8b6d-9c89497d018b)
 
@@ -226,13 +226,13 @@ Important features for this experiments are -
 
 - Convergence of losses seems very difficult
 - Reconstruction of output image is very poor
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
-- Therefore, the plan was to use half precision of speedy training, LR finder to accelerate loss convergence and more epochs to see if mixed up imaged can be generated.
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- Therefore, the plan was to use half precision of speedy training, LR finder to accelerate loss convergence and more epochs to see if mixed up images can be generated.
 
 #### Experiment 2: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v2.ipynb)
 Important features for this experiments are - 
 1. labels are converted to **one-hot encoding**
-2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that ecoding dimension becomes - batch_size x num_labels x img_size x img_size
+2. then each element in the encoding dim (i.e. number of labels) is expanded to image dimension so that encoding dimension becomes - batch_size x num_labels x img_size x img_size
 3. that gets concatenated with image channel dimension and becomes - batch_size x (num_labels + channel_dim) x img_size x img_size. For CIFAR10 channel_dim is 3
 4. Then 1x1 convolution is used to bring the channel dimension back to 3 as the ResNet encoder block accepts 3 channels.
 5. For decoder input, the output of **label encoding** is concatenated directly to latent dimension.
@@ -255,7 +255,7 @@ Important features for this experiments are -
 
 - Convergence of losses seems very difficult
 - Reconstruction of output image is very poor
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 #### Experiment 3: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v1_2.ipynb)
 
@@ -286,12 +286,12 @@ Important features for this experiments are -
 
 - While the loss curves show indication of convergence, convergence of losses seems very difficult
 - Reconstruction of output image is very poor
-- While expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
+- While the expectation was to see a mix of input image and input label as output image, the outcome does not align to that.
 
 #### Experiment 4: [notebook](https://github.com/sayanbanerjee32/TASI_ERAv2_S22/blob/main/VAE_for_CIFAR10_image_and_label_v4.ipynb)
 
 Important features for this experiments are - 
-1. This an extension to Experiment3. Here, along with using the label embedding in encoder and decoder input, used a small linear classifer on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
+1. This is an extension to Experiment3. Here, along with using the label embedding in encoder and decoder input, used a small linear classifier on encoding output to predict MNIST labels. Cross Entropy loss is calculated between actual and predicted labels and that is added onto ELBO loss.
 2. Trained for longer time and used One-Cycle LR and half precision for faster iteration
 ![image](https://github.com/user-attachments/assets/ccd4f9a3-ca8a-4f4f-800e-f0ac71661fd2)
 
@@ -324,12 +324,3 @@ Important features for this experiments are -
 
 - The output is observed to be close to the expectation when provided an image and wrong label.
 - The image reconstruction is better than all other experiments, but completely clear
-
-
-
-
-
-
-
-
-
